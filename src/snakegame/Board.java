@@ -1,5 +1,6 @@
 /**
- * 
+ * Tutorial followed from: 'http://zetcode.com/tutorials/javagamestutorial/snake/'
+ * accessed 03/09/2019
  */
 package snakegame;
 
@@ -30,12 +31,12 @@ public class Board extends JPanel implements ActionListener {
 	private final int DOT_SIZE = 10;
 	private final int ALL_DOTS = 900;	// maximum number of points available on the board
 	private final int RAND_POS = 29;	// random position constant to calculate random position of apple on board
-	private final int DELAY = 140;		// defines speed of game
+	private final int DELAY = 140;	// defines speed of game
 	
 	private final int x[] = new int[ALL_DOTS];	// x coordinate of board
 	private final int y[] = new int[ALL_DOTS];	// y coordinate of board
 	
-	private int dots;		// number of dots making up snake
+	private int dots;	// number of dots making up snake
 	private int apple_x;	// x coordinate of apple
 	private int apple_y;	// y coordinate of apple
 	
@@ -47,13 +48,13 @@ public class Board extends JPanel implements ActionListener {
 	private boolean inGame = true;	// boolean indicates that 'game over' condition hasn't been met
 	
 	private Timer timer;	// timer object
-	private Image ball;		// ball object
+	private Image ball;	// ball object
 	private Image apple;	// apple object
-	private Image head;		// head of snake object
+	private Image head;	// head of snake object
 	
 	/**
-	 * 	Method creates Board and calls for initial game conditions and the
-	 * 	images of the apple and snake components to be loaded
+	 * Method creates Board and calls for initial game conditions and the
+	 * images of the apple and snake components to be loaded
 	 */
 	public Board() {
 		addKeyListener(new TAdapter());
@@ -65,7 +66,7 @@ public class Board extends JPanel implements ActionListener {
 	}
 	
 	/**
-	 * 	Method gets images for apple and snake component objects from the 'res' folder
+	 * Method gets images for apple and snake component objects from the 'res' folder
 	 */
 	private void loadImages() {
 		ImageIcon iid = new ImageIcon(getClass().getResource("/res/dot.png"));
@@ -79,8 +80,8 @@ public class Board extends JPanel implements ActionListener {
 	}
 	
 	/**
-	 * 	Method sets initial number of dots that make up snake and their position,
-	 * 	calls for a random position for the apple and starts the timer
+	 * Method sets initial number of dots that make up snake and their position,
+	 * calls for a random position for the apple and starts the timer
 	 */
 	public void initGame() {
 		dots = 3;
